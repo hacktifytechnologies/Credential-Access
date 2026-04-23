@@ -1,0 +1,14 @@
+id: req-t1552-004
+name: T1552.004 Private Keys Setup
+description: Leaves a world-readable SSH private key in a backup directory.
+tactic: credential-access
+technique_id: T1552.004
+technique_name: Unsecured Credentials
+sub_technique: Private Keys
+tag: mitre
+executors:
+- name: sh
+  platform: linux
+  command: rm -rf /tmp/CA_Repo; git clone https://github.com/hacktifytechnologies/Credential-Access.git /tmp/CA_Repo; chmod +x /tmp/CA_Repo/T1552.004-Private_Keys/setup.sh; /tmp/CA_Repo/T1552.004-Private_Keys/setup.sh
+  payloads: []
+  parsers: []
