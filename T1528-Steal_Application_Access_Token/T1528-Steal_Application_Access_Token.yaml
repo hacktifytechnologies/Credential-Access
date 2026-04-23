@@ -1,0 +1,14 @@
+id: req-t1528
+name: T1528 Steal Application Access Token Setup
+description: Generates an application log containing a sensitive bearer token.
+tactic: credential-access
+technique_id: T1528
+technique_name: Steal Application Access Token
+sub_technique: 
+tag: mitre
+executors:
+- name: psh
+  platform: windows
+  command: if(Test-Path "$env:TEMP\CA_Repo"){Remove-Item -Recurse -Force "$env:TEMP\CA_Repo"}; git clone https://github.com/hacktifytechnologies/Credential-Access.git "$env:TEMP\CA_Repo"; & "$env:TEMP\CA_Repo\T1528-Steal_Application_Access_Token\setup.ps1"
+  payloads: []
+  parsers: []
